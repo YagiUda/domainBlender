@@ -1,0 +1,69 @@
+#!/bin/bash
+# This script will install dependencies for domainBlender on a debian or ubuntu based distro that uses apt-get for installation of software
+
+
+#Confirm super user established
+
+if [ $(id -u) != "0" ]; then
+echo "You must be the superuser to run this script" >&2
+exit 1
+fi
+apt-get update
+
+apt-get install python3.6
+
+apt-get install python3-pip
+#typofinder server dependencies
+pip3 install setuptools
+pip3 install dnspython3
+pip3 install pygeoip
+pip3 install publicsuffix
+
+#typofinder client dependencies
+pip3 install simplejson
+pip3 install requests
+pip3 install beautifulsoup4
+pip3 install html5lib
+
+pip3 install openpyxl
+
+
+echo "Installing dnstwist..."
+# Install dnstwist
+apt install python3-dnspython python3-tld python3-geoip python3-whois python3-requests python3-ssdeep
+pip3 install dnstwist
+
+echo "Installing ruby for URLcrazy"
+apt-get install ruby
+apt-get install ruby-dev
+apt-get install make
+apt-get install zlib1g-dev liblzma-dev
+
+cd urlcrazy
+
+#Dont think this is required..
+#apt-get install urlcrazy
+
+gem install nio4r
+gem install json colorize async async-dns async-http
+
+cd ..
+
+ulimit -n 10000
+
+echo "Installing golang..."
+apt-get install golang
+
+echo "Installing Git..."
+apt-get install git
+
+echo "Installing squat cobbler..."
+go get github.com/m-m-adams/squatcobbler
+
+# This will make the erlang installation active (in the path)
+echo '. /opt/erlang/17.1/activate' >> ~/.bashrc
+
+echo "Installing Java Runtime Environment..."
+apt-get install default-jre
+
+echo "Finished"
