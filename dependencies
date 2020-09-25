@@ -19,6 +19,9 @@ pip3 install dnspython3
 pip3 install pygeoip
 pip3 install publicsuffix
 
+
+tar -xf typofinder.tar.gz
+
 #typofinder client dependencies
 pip3 install simplejson
 pip3 install requests
