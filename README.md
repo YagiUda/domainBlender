@@ -1,5 +1,5 @@
 # domainBlender
-Combined typosquatting finders that determine adversarial possibilities 
+Combined typosquatting finders that determines adversarial possibilities 
 
 INSTALLATION;
 
