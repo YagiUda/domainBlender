@@ -7,6 +7,8 @@ Extract to this path:
 
 ~/domainBlender/
 
+Execute the script: ./dependencies to install pre-requisites
+
 example:      /home/johndoe/domainBlender
 
 TODO:
